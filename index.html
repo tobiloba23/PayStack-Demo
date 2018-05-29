@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Paystack Client</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link 
+      href="node_modules/mdi/css/materialdesignicons.min.css" 
+      media="all" rel="stylesheet" type="text/css"
+    >
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+
+  <body>
+    <div 
+      ng-app="paystackClient"
+      ng-controller="spendersController"
+    >
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <p><strong>Paystack Client</strong></p>
+          <md-button>
+            <md-icon class="mdi mdi-plus-circle"></md-icon>
+            New payment
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-content class="md-padding" layout="row" layout-align="center center">
+        <h1>
+          Share of Revenue
+        </h1>
+      </md-content>
+
+      <md-content class="md-padding" layout="row" layout-wrap>
+        <div flex="15"></div>
+        <spender-section flex="70"></spender-section>
+        <div flex="15"></div>
+      </md-content>
+
+      <md-content class="md-padding" layout="row" layout-align="center center" layout-wrap>
+        <h2 flex="60">
+          Your top <strong>{{ topPaying }}</strong> paying customer{{ (topPaying && topPaying !== 1) ? 's' : '' }} brought in <strong>~ {{ percentage | number: 0 }}%</strong> of your revenue within this period
+        </h2>
+      </md-content>
+
+    </div>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="components/index.module.js"></script>
+    <script src="controllers/spender.controller.js"></script>
+    <script src="directives/spender.directive.js"></script>
+    <script src="factory (services)/spender.service.js"></script>
+  </body>
+
+</html>
