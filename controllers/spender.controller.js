@@ -6,7 +6,7 @@
     .controller("spendersController",
     function($scope, $http, spendersFactory) {
       
-      spendersFactory.getspenders()
+      spendersFactory.getSpenders()
         .then(function(response){
           let sort = 'total_transaction_amount';
           $scope.spenderArray = response.data.data.sort((a, b) => b[`${sort}`] - a[`${sort}`]);
@@ -19,8 +19,8 @@
           $scope.percentage = $scope.sum[$scope.topPaying - 1]/$scope.sum[$scope.sum.length - 1] * 100;
         });
 
-      $scope.round = function() {
-        if ($scope.topPaying || $scope.topPaying === 0) {
+      $scope.onSliderChangeHandler = function() {
+        if (!isNaN($scope.topPaying) && $scope.topPaying) {
           $scope.topPaying = $scope.topPaying > 12 
                               ? 12 : $scope.topPaying < 1
                                 ? 1 : Math.round($scope.topPaying);

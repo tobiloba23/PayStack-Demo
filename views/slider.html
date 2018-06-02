@@ -1,0 +1,10 @@
+<md-content class="md-padding" layout="row" layout-wrap>
+  <div flex="15"></div>
+  <md-slider-container flex="70">
+    <md-slider id='spenders' aria-label='red' ng-model='topPaying' min='1' max='12' step='1' ng-change='onSliderChangeHandler()'></md-slider>
+    <md-input-container>
+      <input aria-controls='red' aria-label='red' ng-model='topPaying' type='number' ng-change='onSliderChangeHandler()'>
+    </md-input-container>
+  </md-slider-container>
+  <div flex="15"></div>
+</md-content>

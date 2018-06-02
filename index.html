@@ -32,16 +32,16 @@
         </h1>
       </md-content>
 
-      <md-content class="md-padding" layout="row" layout-wrap>
-        <div flex="15"></div>
-        <spender-section flex="70"></spender-section>
-        <div flex="15"></div>
-      </md-content>
+      <slider></slider>
 
       <md-content class="md-padding" layout="row" layout-align="center center" layout-wrap>
-        <h2 flex="60">
-          Your top <strong>{{ topPaying }}</strong> paying customer{{ (topPaying && topPaying !== 1) ? 's' : '' }} brought in <strong>~ {{ percentage | number: 0 }}%</strong> of your revenue within this period
-        </h2>
+        <p flex="60" style="font-size: 22px">
+          Your top
+          <strong> {{ topPaying }} </strong>
+          paying customer{{ (topPaying && topPaying !== 1) ? 's' : '' }} brought in
+          <strong> ~ {{ percentage | number: 0 }}% </strong>
+          of your revenue within this period.
+        </p>
       </md-content>
 
     </div>

@@ -10,7 +10,7 @@
           return $http.get('https://studio-api.paystack.co/insights/spenders?from=' + (new Date("2017-01-01")).toDateString() + '&to=' + (new Date()).toDateString());
         }
         return {
-          getspenders: get
+          getSpenders: get
         }
       }
     );
